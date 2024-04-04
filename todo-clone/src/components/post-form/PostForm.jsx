@@ -82,11 +82,11 @@ export default function PostForm({ post }) {
           const dbPost = await authService.createPost({
             ...data,
             featuredimage: data.featuredimage,
-            user: userData.$id,
+            user: "660eb54c20d13151533a",
           });
           console.log({ ...data });
-          console.log(dbPost);
-          console.log(userData.$id);
+          console.log(dbPost.$id);
+          
   
           if (dbPost) {
             navigate(`/post/${dbPost.$id}`);
