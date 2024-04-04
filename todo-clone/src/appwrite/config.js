@@ -14,7 +14,7 @@ export class Service{
         this.bucket = new Storage(this.client);
     }
 
-    async createPost({title, slug, content, featuredimage, status, user}){
+    async createPost({title, slug, content, featuredimage, status, userid}){
         console.log(featuredimage, title, content + 'hellobro');
 
         try {
@@ -27,7 +27,7 @@ export class Service{
                     content,
                     featuredimage,
                     status,
-                    user,
+                    userid,
                 }
             )
         } catch (error) {

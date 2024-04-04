@@ -20,38 +20,7 @@ export default function PostForm({ post }) {
     const user = useSelector((state) => state.auth.status);
     console.log(user);
     console.log(userData)
-    // const submit = async (data) => {
-    //     console.log("hey");
-    //     console.log(data);
-    //     if (post) {
-    //         const file = data.image[0] ? await appwriteauthService.uploadFile(data.image[0]) : null;
 
-    //         if (file) {
-    //             appwriteauthService.deleteFile(post.featuredimage);
-    //         }
-
-    //         const dbPost = await appwriteauthService.updatePost(post.$id, {
-    //             ...data,
-    //             featuredimage: file ? file.$id : undefined,
-    //         });
-
-    //         if (dbPost) {
-    //             navigate(`/post/${dbPost.$id}`);
-    //         }
-    //     } else {
-    //         const file = await appwriteauthService.uploadFile(data.image[0]);
-
-    //         if (file) {
-    //             const fileId = file.$id;
-    //             data.featuredimage = fileId;
-    //             const dbPost = await appwriteauthService.createPost({ ...data, user: userData.$id });
-
-    //             if (dbPost) {
-    //                 navigate(`/post/${dbPost.$id}`);
-    //             }
-    //         }
-    //     }
-    // };
     const editpost = async(data) => {
 
         const file = data.image[0]
@@ -82,7 +51,7 @@ export default function PostForm({ post }) {
           const dbPost = await authService.createPost({
             ...data,
             featuredimage: data.featuredimage,
-            user: "660eb54c20d13151533a",
+            userid: userData.$id,
           });
           console.log({ ...data });
           console.log(dbPost.$id);
